@@ -1,0 +1,7 @@
+Analysis of algorithm:
+The speed complexity of my algorithm is O(n^2 * m) and the space complexity is O(n * m). The bottleneck of my algorithm is the formation of the graph. To form the graph, the sequences are converted into n elements with coordinates of m dimensions. These m dimensions and n elements are represented with a coordinate system stored in a 2D array of (n * m) size. If all of one element’s coordinates are less than another they are connected (smaller directed to bigger). To process this a loop of size n scans one element while a loop of size n scans the other elements to compare. In the comparison m coordinates are compared. The worst case is O(n^2 * m). It is optimized to be O(n * n/2 * m), if one coordinate comparison fails the loop immediately breaks. To find the longest sequence a DFS is used. This speed depends on the size of the graph but is essentially always less than the time required to generate the graph. Depending on number of vertices (n) and edges generated, the speed is O(V + E). Additional space is not required to traverse the graph. The adjacency list is stored in O(V + E) space. 
+
+Best case runtime: O(n^2) because there are no edges to be found.
+Worst case runtime: O(n^2 * m) because all but one nodes are connected with edges.
+
+It can be seen in the result tabulation that increasing n has a larger effect on the speed than increasing m. This is because n is to the order of 2 and m is to the order of 1.
